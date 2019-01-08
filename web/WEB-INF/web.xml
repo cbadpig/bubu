@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <display-name>bubu</display-name>
+    <display-name>bubu-2019.1.1</display-name>
 
     <session-config>
         <session-timeout>230</session-timeout>
