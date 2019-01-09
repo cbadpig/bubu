@@ -6,9 +6,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--静态资源文件过滤-->
-    <mvc:resources mapping="sfkg/static/**"   location="/WEB-STATIC/sfkg/static/"/>
-    <mvc:resources mapping="sfzg/static/**"   location="/WEB-STATIC/sfzg/static/"/>
-    <mvc:resources mapping="shouyi/static/**" location="/WEB-STATIC/shouyi/static/"/>
+    <mvc:resources mapping="sfkg/static/**"   location="/WEB-STATIC/lovestory/resources/"/>
+    <mvc:resources mapping="sfzg/static/**"   location="/WEB-STATIC/threadpool/resources/"/>
 
     <!--过滤静态资源-->
     <mvc:default-servlet-handler/>
@@ -37,8 +36,9 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
     <!--扫描到的类，可以使用注解-->
-    <context:component-scan base-package="code.com.obt.demo.*.controller">
+    <context:component-scan base-package="code.com.bubu.*.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -46,10 +46,8 @@
     <bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPaths">
             <list>
-                <value>/WEB-STATIC/sfkg/view/</value>
-                <value>/WEB-STATIC/sfzg/view/</value>
-                <value>/WEB-STATIC/shouyi/view/</value>
-                <value>/WEB-STATIC/test/view/</value>
+                <value>/WEB-STATIC/lovestory/view/</value>
+                <value>/WEB-STATIC/threadpool/view/</value>
             </list>
         </property>
         <property name="defaultEncoding" value="UTF-8"/>
