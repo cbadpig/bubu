@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>bubu-</title>
+    <link rel="stylesheet" href="main/static/bootstrap-4.2.1/css/bootstrap.css">
+    <script src="main/static/jquery/jquery-1.10.2.js"></script>
+    <script src="main/static/bootstrap-4.2.1/js/bootstrap.js"></script>
+    <script src="main/static/custom/user/signin.js"></script>
+    <script src="main/static/artdialog-7.0.0/js/dialog-plus.js"></script>
+    <script src="main/static/custom/js/main.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card rounded-0 m-auto border" style="max-width: 18rem;">
+        <div class="card-body">
+            <div class="form-signin">
+                <img class="mb-4" src="" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="yhm" class="sr-only">用户名：邮箱/昵称</label>
+                <input type="text" value="891511545@qq.com" id="yhm" class="form-control rounded-0" placeholder="用户名：邮箱/昵称" required autofocus>
+                <label for="mm" class="sr-only">登录密码</label>
+                <input type="password" value="123456" id="mm" class="form-control rounded-0 mt-1" placeholder="登录密码" required>
+                <div class="checkbox mb-3">
+                    <button type="button" class="btn btn-link float-right text-info p-0"><small>忘记密码</small></button>
+                </div>
+                <button class="btn btn-lg btn-info btn-block rounded-0" type="button" onclick="signin()">登录</button>
+
+            </div>
+        </div>
+        <div class="card-footer"><button type="button" class="btn btn-link text-info p-0"  onclick="signin_repleace_up()"><small>注册</small></button></div>
+    </div>
+    <div class="text-muted m-auto mt-lg-5" style="max-width: 18rem;">&copy; 2019</div>
+</div>
+</body>
+</html>
