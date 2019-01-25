@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="code.com.bubu.lovestory.mapper.dao.LvdtBeanMapper">
+  <resultMap id="BaseResultMap" type="code.com.bubu.lovestory.bean.LvdtBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="yh_id" jdbcType="INTEGER" property="yhId" />
+    <result column="dx_id" jdbcType="INTEGER" property="dxId" />
+    <result column="lx" jdbcType="INTEGER" property="lx" />
+    <result column="sj" jdbcType="VARCHAR" property="sj" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, yh_id, dx_id, lx, sj
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_lv_dt
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_lv_dt
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="code.com.bubu.lovestory.bean.LvdtBean">
+    insert into t_lv_dt (id, yh_id, dx_id, 
+      lx, sj)
+    values (#{id,jdbcType=INTEGER}, #{yhId,jdbcType=INTEGER}, #{dxId,jdbcType=INTEGER}, 
+      #{lx,jdbcType=INTEGER}, #{sj,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="code.com.bubu.lovestory.bean.LvdtBean">
+    insert into t_lv_dt
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="yhId != null">
+        yh_id,
+      </if>
+      <if test="dxId != null">
+        dx_id,
+      </if>
+      <if test="lx != null">
+        lx,
+      </if>
+      <if test="sj != null">
+        sj,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="yhId != null">
+        #{yhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxId != null">
+        #{dxId,jdbcType=INTEGER},
+      </if>
+      <if test="lx != null">
+        #{lx,jdbcType=INTEGER},
+      </if>
+      <if test="sj != null">
+        #{sj,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="code.com.bubu.lovestory.bean.LvdtBean">
+    update t_lv_dt
+    <set>
+      <if test="yhId != null">
+        yh_id = #{yhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxId != null">
+        dx_id = #{dxId,jdbcType=INTEGER},
+      </if>
+      <if test="lx != null">
+        lx = #{lx,jdbcType=INTEGER},
+      </if>
+      <if test="sj != null">
+        sj = #{sj,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="code.com.bubu.lovestory.bean.LvdtBean">
+    update t_lv_dt
+    set yh_id = #{yhId,jdbcType=INTEGER},
+      dx_id = #{dxId,jdbcType=INTEGER},
+      lx = #{lx,jdbcType=INTEGER},
+      sj = #{sj,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

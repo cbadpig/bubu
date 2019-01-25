@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="code.com.bubu.threadpool.mapper.dao.TpgzBeanMapper">
+  <resultMap id="BaseResultMap" type="code.com.bubu.threadpool.bean.TpgzBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="gzyh_id" jdbcType="INTEGER" property="gzyhId" />
+    <result column="dxyh_id" jdbcType="INTEGER" property="dxyhId" />
+    <result column="zt" jdbcType="INTEGER" property="zt" />
+    <result column="sj" jdbcType="VARCHAR" property="sj" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, gzyh_id, dxyh_id, zt, sj
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_tp_gz
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_tp_gz
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="code.com.bubu.threadpool.bean.TpgzBean">
+    insert into t_tp_gz (id, gzyh_id, dxyh_id, 
+      zt, sj)
+    values (#{id,jdbcType=INTEGER}, #{gzyhId,jdbcType=INTEGER}, #{dxyhId,jdbcType=INTEGER}, 
+      #{zt,jdbcType=INTEGER}, #{sj,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="code.com.bubu.threadpool.bean.TpgzBean">
+    insert into t_tp_gz
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="gzyhId != null">
+        gzyh_id,
+      </if>
+      <if test="dxyhId != null">
+        dxyh_id,
+      </if>
+      <if test="zt != null">
+        zt,
+      </if>
+      <if test="sj != null">
+        sj,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="gzyhId != null">
+        #{gzyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxyhId != null">
+        #{dxyhId,jdbcType=INTEGER},
+      </if>
+      <if test="zt != null">
+        #{zt,jdbcType=INTEGER},
+      </if>
+      <if test="sj != null">
+        #{sj,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="code.com.bubu.threadpool.bean.TpgzBean">
+    update t_tp_gz
+    <set>
+      <if test="gzyhId != null">
+        gzyh_id = #{gzyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxyhId != null">
+        dxyh_id = #{dxyhId,jdbcType=INTEGER},
+      </if>
+      <if test="zt != null">
+        zt = #{zt,jdbcType=INTEGER},
+      </if>
+      <if test="sj != null">
+        sj = #{sj,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="code.com.bubu.threadpool.bean.TpgzBean">
+    update t_tp_gz
+    set gzyh_id = #{gzyhId,jdbcType=INTEGER},
+      dxyh_id = #{dxyhId,jdbcType=INTEGER},
+      zt = #{zt,jdbcType=INTEGER},
+      sj = #{sj,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

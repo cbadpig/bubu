@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="code.com.bubu.lovestory.mapper.dao.LvplBeanMapper">
+  <resultMap id="BaseResultMap" type="code.com.bubu.lovestory.bean.LvplBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="f_id" jdbcType="INTEGER" property="fId" />
+    <result column="zj_id" jdbcType="INTEGER" property="zjId" />
+    <result column="plyh_id" jdbcType="INTEGER" property="plyhId" />
+    <result column="dxyh_id" jdbcType="INTEGER" property="dxyhId" />
+    <result column="dzsl" jdbcType="INTEGER" property="dzsl" />
+    <result column="plsj" jdbcType="VARCHAR" property="plsj" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="code.com.bubu.lovestory.bean.LvplBean">
+    <result column="plnr" jdbcType="LONGVARCHAR" property="plnr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, f_id, zj_id, plyh_id, dxyh_id, dzsl, plsj
+  </sql>
+  <sql id="Blob_Column_List">
+    plnr
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_lv_pl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_lv_pl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="code.com.bubu.lovestory.bean.LvplBean">
+    insert into t_lv_pl (id, f_id, zj_id, 
+      plyh_id, dxyh_id, dzsl, 
+      plsj, plnr)
+    values (#{id,jdbcType=INTEGER}, #{fId,jdbcType=INTEGER}, #{zjId,jdbcType=INTEGER}, 
+      #{plyhId,jdbcType=INTEGER}, #{dxyhId,jdbcType=INTEGER}, #{dzsl,jdbcType=INTEGER}, 
+      #{plsj,jdbcType=VARCHAR}, #{plnr,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="code.com.bubu.lovestory.bean.LvplBean">
+    insert into t_lv_pl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fId != null">
+        f_id,
+      </if>
+      <if test="zjId != null">
+        zj_id,
+      </if>
+      <if test="plyhId != null">
+        plyh_id,
+      </if>
+      <if test="dxyhId != null">
+        dxyh_id,
+      </if>
+      <if test="dzsl != null">
+        dzsl,
+      </if>
+      <if test="plsj != null">
+        plsj,
+      </if>
+      <if test="plnr != null">
+        plnr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fId != null">
+        #{fId,jdbcType=INTEGER},
+      </if>
+      <if test="zjId != null">
+        #{zjId,jdbcType=INTEGER},
+      </if>
+      <if test="plyhId != null">
+        #{plyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxyhId != null">
+        #{dxyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dzsl != null">
+        #{dzsl,jdbcType=INTEGER},
+      </if>
+      <if test="plsj != null">
+        #{plsj,jdbcType=VARCHAR},
+      </if>
+      <if test="plnr != null">
+        #{plnr,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="code.com.bubu.lovestory.bean.LvplBean">
+    update t_lv_pl
+    <set>
+      <if test="fId != null">
+        f_id = #{fId,jdbcType=INTEGER},
+      </if>
+      <if test="zjId != null">
+        zj_id = #{zjId,jdbcType=INTEGER},
+      </if>
+      <if test="plyhId != null">
+        plyh_id = #{plyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dxyhId != null">
+        dxyh_id = #{dxyhId,jdbcType=INTEGER},
+      </if>
+      <if test="dzsl != null">
+        dzsl = #{dzsl,jdbcType=INTEGER},
+      </if>
+      <if test="plsj != null">
+        plsj = #{plsj,jdbcType=VARCHAR},
+      </if>
+      <if test="plnr != null">
+        plnr = #{plnr,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="code.com.bubu.lovestory.bean.LvplBean">
+    update t_lv_pl
+    set f_id = #{fId,jdbcType=INTEGER},
+      zj_id = #{zjId,jdbcType=INTEGER},
+      plyh_id = #{plyhId,jdbcType=INTEGER},
+      dxyh_id = #{dxyhId,jdbcType=INTEGER},
+      dzsl = #{dzsl,jdbcType=INTEGER},
+      plsj = #{plsj,jdbcType=VARCHAR},
+      plnr = #{plnr,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="code.com.bubu.lovestory.bean.LvplBean">
+    update t_lv_pl
+    set f_id = #{fId,jdbcType=INTEGER},
+      zj_id = #{zjId,jdbcType=INTEGER},
+      plyh_id = #{plyhId,jdbcType=INTEGER},
+      dxyh_id = #{dxyhId,jdbcType=INTEGER},
+      dzsl = #{dzsl,jdbcType=INTEGER},
+      plsj = #{plsj,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
