@@ -11,6 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("")
 public class MainController {
 
+    @RequestMapping({"","/"})
+    public ModelAndView index() {
+        return new ModelAndView("fanfaction/view/fanfaction");
+    }
+
     /**
      * 登录页面
      * @return
@@ -26,5 +31,9 @@ public class MainController {
     @RequestMapping("/signup")
     public ModelAndView signup() {
         return new ModelAndView("main/view/user/signup");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("2323se");
     }
 }
