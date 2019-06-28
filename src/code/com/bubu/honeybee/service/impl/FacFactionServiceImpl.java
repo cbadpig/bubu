@@ -67,6 +67,7 @@ class FanFactionRunnable implements Runnable {
             while ((strLine = reader.readLine()) != null) {
                 buffer.append(strLine);
             }
+
             String htmlstr = buffer.toString();
 
             writerToText(getTitle(htmlstr),getAuthor(htmlstr),getContent(htmlstr));
