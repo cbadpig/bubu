@@ -6,8 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--静态资源文件过滤-->
-    <mvc:resources mapping="main/static/**"   location="/WEB-STATIC/main/resources/"/>
-    <mvc:resources mapping="lovestory/static/**"   location="/WEB-STATIC/lovestory/resources/"/>
+    <mvc:resources mapping="main/static/**"   location="WEB-STATIC/main/resources/"/>
+    <mvc:resources mapping="lovestory/static/**"   location="WEB-STATIC/lovestory/resources/"/>
+    <mvc:resources mapping="fanfaction/static/**"   location="WEB-STATIC/fanfaction/resources/"/>
 
     <!--过滤静态资源-->
     <mvc:default-servlet-handler/>
