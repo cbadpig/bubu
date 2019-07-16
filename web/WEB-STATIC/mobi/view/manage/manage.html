@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>布布-kindle电子书分享网站管理平台</title>
+    <link rel="stylesheet" href="../../resources/jquery-easyui-1.8.2/themes/material-teal/easyui.css">
+    <link rel="stylesheet" href="../../resources/jquery-easyui-1.8.2/themes/icon.css">
+    <script src="../../resources/jquery-easyui-1.8.2/jquery.min.js"></script>
+    <script src="../../resources/jquery-easyui-1.8.2/jquery.easyui.min.js"></script>
 </head>
-<body>
-
+<body class="easyui-layout">
+    <div data-options="region:'north'" style="height:70px">
+        布布-kindle电子书分享网站管理平台
+    </div>
+    <div data-options="region:'west'" style="width:260px;">
+        <div id="sm" class="easyui-sidemenu" style="width:260px;" data-options="data:data,border:false"></div>
+        <script type="text/javascript">
+            var data = [{
+                text: '系统管理',
+                iconCls: 'icon-sum',
+                state: 'open',
+                children: [{
+                    text: '用户管理'
+                },{
+                    text: '权限管理'
+                },{
+                    text: '注册码管理'
+                }]
+            },{
+                text: '图书管理',
+                iconCls: 'icon-more',
+                state: 'open',
+                children: [{
+                    text: '上传图书'
+                },{
+                    text: '审核图书'
+                }]
+            }];
+        </script>
+    </div>
+    <div data-options="region:'center'">
+        <table id="dg" class="easyui-datagrid" title="Fluid DataGrid"
+               data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+            <thead>
+            <tr>
+                <th data-options="field:'itemid',resizable:false" width="15%">Item ID(15%)</th>
+                <th data-options="field:'productid',resizable:false" width="15%">Product(15%)</th>
+                <th data-options="field:'listprice',align:'right',resizable:false" width="15%">List Price(15%)</th>
+                <th data-options="field:'unitcost',align:'right',resizable:false" width="15%">Unit Cost(15%)</th>
+                <th data-options="field:'attr1',resizable:false" width="25%">Attribute(25%)</th>
+                <th data-options="field:'status',align:'center',resizable:false" width="15%">Status(15%)</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
 </body>
 </html>
