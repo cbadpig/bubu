@@ -13,7 +13,7 @@ public class MainController {
 
     @RequestMapping({"","/"})
     public ModelAndView index() {
-        return new ModelAndView("fanfaction/view/fanfaction");
+        return new ModelAndView("mobi/view/manage/login");
     }
 
     /**
