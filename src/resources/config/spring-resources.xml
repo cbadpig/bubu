@@ -54,4 +54,13 @@
 
     <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
 
+    <bean id="sqlSessionFactoryBeanName" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" value="dataSource"/>
+        <property name="configLocation" value="classpath:**/mapper/xml/*Mapper.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="code.com.bubu.*.mapper.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBeanName"/>
+    </bean>
 </beans>

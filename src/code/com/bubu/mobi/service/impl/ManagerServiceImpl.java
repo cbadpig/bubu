@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ManagerServiceImpl implements ManagerService {
 
-    @Autowired
-    private MobiManagerMapper mobiManagerMapper;
+//    @Autowired
+//    private MobiManagerMapper mobiManagerMapper;
 
     @Override
     public Result loging(String email, String password) {
