@@ -1,6 +1,6 @@
 package code.com.bubu.mobi.bean;
 
-public class MobiManagerBean {
+public class MobiManager {
     private String id;
 
     private String email;

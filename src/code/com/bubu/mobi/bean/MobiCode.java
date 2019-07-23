@@ -1,6 +1,6 @@
 package code.com.bubu.mobi.bean;
 
-public class MobiCodeBean {
+public class MobiCode {
     private String id;
 
     private String code;
