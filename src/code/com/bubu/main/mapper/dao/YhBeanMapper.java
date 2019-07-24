@@ -3,7 +3,7 @@ package code.com.bubu.main.mapper.dao;
 import code.com.bubu.main.bean.YhBean;
 
 public interface YhBeanMapper {
-    int deleteByPrimaryKey(Integer id);
+    /*int deleteByPrimaryKey(Integer id);
 
     int insert(YhBean record);
 
@@ -13,5 +13,5 @@ public interface YhBeanMapper {
 
     int updateByPrimaryKeySelective(YhBean record);
 
-    int updateByPrimaryKey(YhBean record);
+    int updateByPrimaryKey(YhBean record);*/
 }

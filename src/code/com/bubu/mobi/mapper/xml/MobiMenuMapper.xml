@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="code.com.bubu.mobi.mapper.dao.MobiMenuMapper">
-  <resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiMenu">
+  <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiMenu">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="url" jdbcType="VARCHAR" property="url" />
@@ -89,5 +89,5 @@
       parentid = #{parentid,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
-  </update>
+  </update>-->
 </mapper>

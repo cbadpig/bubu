@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="code.com.bubu.mobi.mapper.dao.MobiCodeMapper">
-  <resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiCode">
+  <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiCode">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="type" jdbcType="INTEGER" property="type" />
@@ -78,5 +78,5 @@
       type = #{type,jdbcType=INTEGER},
       time = #{time,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
-  </update>
+  </update>-->
 </mapper>

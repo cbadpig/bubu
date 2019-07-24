@@ -3,7 +3,7 @@ package code.com.bubu.mobi.mapper.dao;
 import code.com.bubu.mobi.bean.MobiMenu;
 
 public interface MobiMenuMapper {
-    int deleteByPrimaryKey(String id);
+    /*int deleteByPrimaryKey(String id);
 
     int insert(MobiMenu record);
 
@@ -13,5 +13,5 @@ public interface MobiMenuMapper {
 
     int updateByPrimaryKeySelective(MobiMenu record);
 
-    int updateByPrimaryKey(MobiMenu record);
+    int updateByPrimaryKey(MobiMenu record);*/
 }

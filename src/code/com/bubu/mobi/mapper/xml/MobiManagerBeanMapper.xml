@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="code.com.bubu.mobi.mapper.dao.MobiManagerMapper">
-  <resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiManager">
+  <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiManager">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="iphone" jdbcType="INTEGER" property="iphone" />
@@ -124,5 +124,5 @@
       type = #{type,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
-  </update>
+  </update>-->
 </mapper>

@@ -46,7 +46,16 @@
 
         <property name="asyncInit" value="true" />
     </bean>
+    <!--MyBatis配置-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:code/com/bubu/**/mapper/xml/*Mapper.xml"/>
+    </bean>
 
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="code.com.bubu.*.mapper.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
     <!--事物管理-->
     <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
@@ -54,13 +63,5 @@
 
     <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
 
-    <bean id="sqlSessionFactoryBeanName" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" value="dataSource"/>
-        <property name="configLocation" value="classpath:**/mapper/xml/*Mapper.xml"/>
-    </bean>
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="code.com.bubu.*.mapper.dao"/>
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBeanName"/>
-    </bean>
 </beans>

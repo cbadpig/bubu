@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="code.com.bubu.mobi.mapper.dao.MobiManagerLogMapper">
-  <resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiManagerLog">
+  <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiManagerLog">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="managerid" jdbcType="VARCHAR" property="managerid" />
     <result column="type" jdbcType="INTEGER" property="type" />
@@ -113,5 +113,5 @@
       ip = #{ip,jdbcType=VARCHAR},
       time = #{time,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
-  </update>
+  </update>-->
 </mapper>

@@ -3,7 +3,7 @@ package code.com.bubu.mobi.mapper.dao;
 import code.com.bubu.mobi.bean.MobiManagerLog;
 
 public interface MobiManagerLogMapper {
-    int deleteByPrimaryKey(String id);
+    /*int deleteByPrimaryKey(String id);
 
     int insert(MobiManagerLog record);
 
@@ -13,5 +13,5 @@ public interface MobiManagerLogMapper {
 
     int updateByPrimaryKeySelective(MobiManagerLog record);
 
-    int updateByPrimaryKey(MobiManagerLog record);
+    int updateByPrimaryKey(MobiManagerLog record);*/
 }

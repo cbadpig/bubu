@@ -3,7 +3,7 @@ package code.com.bubu.mobi.mapper.dao;
 import code.com.bubu.mobi.bean.MobiCode;
 
 public interface MobiCodeMapper {
-    int deleteByPrimaryKey(String id);
+    /*int deleteByPrimaryKey(String id);
 
     int insert(MobiCode record);
 
@@ -13,5 +13,5 @@ public interface MobiCodeMapper {
 
     int updateByPrimaryKeySelective(MobiCode record);
 
-    int updateByPrimaryKey(MobiCode record);
+    int updateByPrimaryKey(MobiCode record);*/
 }
