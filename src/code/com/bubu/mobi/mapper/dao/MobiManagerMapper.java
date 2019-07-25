@@ -7,6 +7,8 @@ public interface MobiManagerMapper {
 
     MobiManager selectManagerByEmail(@Param("email") String email, @Param("password") String password);
 
+    int insertByEmailAndPassword(@Param("email") String email, @Param("password") String password);
+
     /*int deleteByPrimaryKey(String id);
 
     int insert(MobiManager record);

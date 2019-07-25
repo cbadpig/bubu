@@ -8,7 +8,11 @@
         FROM t_mobi_manager
         WHERE email = #{email,jdbcType=VARCHAR} and password=#{password,jdbcType=VARCHAR}
     </select>
-
+    <insert id="insertByEmailAndPassword">
+    insert into t_mobi_manager (id, email, password,type, status)
+    values (REPLACE(UUID(),'-',''),#{email,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR}, 2, 0)
+  </insert>
 
 
     <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiManager">

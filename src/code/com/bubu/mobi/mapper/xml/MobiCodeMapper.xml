@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="code.com.bubu.mobi.mapper.dao.MobiCodeMapper">
+
+
+  <insert id="insertByType" parameterType="java.lang.Integer">
+    insert into t_mobi_code (id, code, type,time)
+    values (REPLACE(UUID(),'-',''), SUBSTRING(RAND(),3,6), #{type,jdbcType=INTEGER},UNIX_TIMESTAMP())
+  </insert>
+
+  <select id="selectCodeByType" resultType="code.com.bubu.mobi.bean.MobiCode">
+    select *
+    from t_mobi_code
+    where type = #{type,jdbcType=INTEGER} and code = #{code,jdbcType=VARCHAR}
+  </select>
+
   <!--<resultMap id="BaseResultMap" type="code.com.bubu.mobi.bean.MobiCode">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="code" jdbcType="VARCHAR" property="code" />
