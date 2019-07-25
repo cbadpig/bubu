@@ -17,17 +17,19 @@
                 return;
             }
             $.ajax({
-                url:'mobi/manager/loging',
+                url:'mobi/loging',
                 type:'post',
                 dataType:'json',
                 data:{"email":email,"password":password},
                 success:function (data) {
-
-                    alert(data.message);
-                    console.log(data.message);
+                    if(data.flag) {
+                        window.location.replace("mobi/manage");
+                    } else {
+                        alert(data.message);
+                    }
                 },
                 error:function () {
-                    
+                    alert("登录异常，请重新尝试！");
                 }
             })
         }

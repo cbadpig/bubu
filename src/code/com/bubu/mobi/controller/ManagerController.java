@@ -2,22 +2,31 @@ package code.com.bubu.mobi.controller;
 
 import code.com.bubu.main.util.Result;
 import code.com.bubu.mobi.service.ManagerService;
-import code.com.bubu.mobi.service.impl.ManagerServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("mobi/manager")
+@RequestMapping("mobi")
 public class ManagerController {
 
     @Autowired
     private ManagerService managerService;
+
+    @RequestMapping({"/",""})
+    public ModelAndView index() {
+        return new ModelAndView("mobi/view/manage/login");
+    }
+
+    @RequestMapping({"manage","manage/"})
+    public ModelAndView index_manager() {
+        return new ModelAndView("mobi/view/manage/manage");
+    }
 
     @RequestMapping({"/loging"})
     public Result loging(String email, String password, HttpServletRequest request) {
@@ -33,5 +42,6 @@ public class ManagerController {
         }
         return result;
     }
+
 
 }
