@@ -29,9 +29,8 @@ public class ManagerController {
         Result result = managerService.loging(email,password);
         if (result.flag) {
             HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("email",email);
         }
-
-
         return result;
     }
 
