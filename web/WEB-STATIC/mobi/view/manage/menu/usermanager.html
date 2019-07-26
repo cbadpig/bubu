@@ -8,15 +8,20 @@
     <script src="../mobi/static/jquery-easyui-1.8.2/jquery.min.js"></script>
     <script src="../mobi/static/jquery-easyui-1.8.2/jquery.easyui.min.js"></script>
     <script src="../mobi/static/jquery-easyui-1.8.2/locale/easyui-lang-zh_CN.js"></script>
-    <script src="../mobi/static/mobi/js/manager.js"></script>
 </head>
-<body class="easyui-layout">
-    <div data-options="region:'north'" style="height:70px">
-        布布-kindle电子书分享网站管理平台
-    </div>
-    <div data-options="region:'west'" style="width:260px;">
-        <div id="sm" style="width:260px;" data-options="border:false"></div>
-    </div>
-    <div id="menu" data-options="region:'center'"></div>
+<body>
+    <table id="dg" title="用户管理" class="easyui-datagrid"
+           url="get_users.php"
+           toolbar="#toolbar" pagination="true"
+           rownumbers="true" fitColumns="true" singleSelect="true" data-options="fit:true,border:false">
+        <thead>
+        <tr>
+            <th field="firstname" width="50">First Name</th>
+            <th field="lastname" width="50">Last Name</th>
+            <th field="phone" width="50">Phone</th>
+            <th field="email" width="50">Email</th>
+        </tr>
+        </thead>
+    </table>
 </body>
 </html>

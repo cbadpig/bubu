@@ -48,4 +48,12 @@ public class ManagerServiceImpl implements ManagerService {
 
         return Result.OK();
     }
+
+    @Override
+    public Result sideMenu(String email) {
+
+
+
+        return null;
+    }
 }

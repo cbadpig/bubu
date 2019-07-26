@@ -28,6 +28,11 @@ public class ManagerController {
         return new ModelAndView("mobi/view/manage/manage");
     }
 
+    @RequestMapping({"menu"})
+    public ModelAndView index_menu() {
+        return new ModelAndView("mobi/view/manage/menu/usermanager");
+    }
+
     @RequestMapping({"/loging"})
     public Result loging(String email, String password, HttpServletRequest request) {
 
@@ -43,5 +48,12 @@ public class ManagerController {
         return result;
     }
 
-
+    @RequestMapping({"/sidemenu"})
+    public Result sideMenu(HttpServletRequest request) {
+        String email = (String)request.getSession().getAttribute("email");
+        if (StringUtils.isBlank(email)) {
+            return Result.ERROR("未找到管理员登录信息，无法获取菜单。");
+        }
+        return managerService.sideMenu(email);
+    }
 }
