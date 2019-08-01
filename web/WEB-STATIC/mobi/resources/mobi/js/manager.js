@@ -43,9 +43,7 @@ function initSideMenu() {
 }
 
 function clickMenu(menu) {
-    console.log(menu);
     $.get("menu",menu.id,function (data) {
-        console.log(data);
         $('#menu').html(data);
     });
 }
