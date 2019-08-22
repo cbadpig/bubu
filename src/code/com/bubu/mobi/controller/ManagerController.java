@@ -30,7 +30,7 @@ public class ManagerController {
 
     @RequestMapping({"menu"})
     public ModelAndView index_menu() {
-        return new ModelAndView("mobi/view/manage/menu/usermanager");
+        return new ModelAndView("mobi/view/manage/menu/uploadbook");
     }
 
     @RequestMapping({"/loging"})

@@ -28,7 +28,8 @@ function initSideMenu() {
         iconCls: 'icon-more',
         state: 'open',
         children: [{
-            text: '上传图书'
+            text: '上传图书',
+            url:'uploadbook'
         },{
             text: '审核图书'
         }]

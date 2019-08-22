@@ -10,18 +10,17 @@
     <script src="../mobi/static/jquery-easyui-1.8.2/locale/easyui-lang-zh_CN.js"></script>
 </head>
 <body>
-    <table id="dg" title="用户管理" class="easyui-datagrid"
-           url="get_users.php"
-           toolbar="#toolbar" pagination="true"
-           rownumbers="true" fitColumns="true" singleSelect="true" data-options="fit:true,border:false">
-        <thead>
-        <tr>
-            <th field="firstname" width="50">First Name</th>
-            <th field="lastname" width="50">Last Name</th>
-            <th field="phone" width="50">Phone</th>
-            <th field="email" width="50">Email</th>
-        </tr>
-        </thead>
-    </table>
+    <div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+        <input id="fb" class="easyui-filebox" style="width:100%;" data-options="prompt:'请选择一个文件',buttonText:'选择文件'">
+        <a href="#" class="easyui-linkbutton" style="width:100%;">上传</a>
+        <input class="easyui-textbox" data-options="prompt:'书名'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'作者'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'豆掰评分'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'分类'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'标签'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'豆掰评分'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'作者简介'" style="width:100%;">
+        <input class="easyui-textbox" data-options="prompt:'书籍简介'" style="width:100%;">
+    </div>
 </body>
 </html>
