@@ -32,6 +32,9 @@ function initSideMenu() {
             url:'uploadbook'
         },{
             text: '审核图书'
+        },{
+            text: '格式转换',
+            url:'uploadbook'
         }]
     }];
 
@@ -44,7 +47,5 @@ function initSideMenu() {
 }
 
 function clickMenu(menu) {
-    $.get("menu",menu.id,function (data) {
-        $('#menu').html(data);
-    });
+    $("#menu").panel({region:'center',href:'menu/'+menu.url});
 }

@@ -4,6 +4,7 @@ import code.com.bubu.main.util.Result;
 import code.com.bubu.mobi.service.ManagerService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,9 +29,9 @@ public class ManagerController {
         return new ModelAndView("mobi/view/manage/manage");
     }
 
-    @RequestMapping({"menu"})
-    public ModelAndView index_menu() {
-        return new ModelAndView("mobi/view/manage/menu/uploadbook");
+    @RequestMapping({"menu/{url}"})
+    public ModelAndView index_menu(@PathVariable("url")String url) {
+        return new ModelAndView("mobi/view/manage/menu/" + url);
     }
 
     @RequestMapping({"/loging"})
