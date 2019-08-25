@@ -1,8 +1,47 @@
+<style>
+    .textbox-label {
+        width:auto;
+    }
+</style>
 <div style="text-align:center;padding:5px">
-    <form id="uploadbook" action="" method="post"  enctype="multipart/form-data" >
-        <input class="easyui-filebox" style="width:300px">
+    <form id="uploadbook" action="" method="post" style="width:600px;margin:0 auto;"  enctype="multipart/form-data" >
+        <div style="margin-bottom:20px;margin-top:20px;">
+            <input class="easyui-filebox" data-options="prompt:'请选择一本书',buttonText:'选择书籍'" style="width:600px"/>
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="prompt:'书名：请填写本书书名，格式要求书名-作者，如长恨歌-王安忆'" style="width:600px;"/>
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="prompt:'作者：请填写作者名字'" style="width:600px;"/>
+        </div>
+        <div style="margin-bottom:20px;text-align:left;">
+            类型：
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="小说" label="小说" checked/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="经管" label="经管"/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="文学" label="文学"/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="社科" label="社科"/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="历史传记" label="历史传记"/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="英文原版" label="英文原版"/>&nbsp;
+            <input class="easyui-radiobutton" name="lx" data-options="labelPosition:'after'" value="中英对照" label="中英对照"/>&nbsp;
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="prompt:'标签：标签之间请用逗号分隔，最多填写三个，如小说，历史，穿越'" style="width:600px;"/>
+        </div>
+        <div style="margin-bottom:20px;text-align:left;">
+            豆掰评分：<input class="easyui-numberspinner" precision="1" data-options="min:0,max:10,required:true" value="0.0" style="width:80px;"/>
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="buttonText:'抓取内容',prompt:'豆掰网址：'" style="width:600px;"/>
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="prompt:'作者简介：',multiline:true" value="" style="width:600px;height:100px"/>
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" data-options="prompt:'书籍简介：',multiline:true" value="" style="width:600px;height:100px"/>
+        </div>
+
     </form>
 
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">上传，请等待验证</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton">上传，请等待审核</a>
 </div>
 
